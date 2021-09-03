@@ -26,7 +26,7 @@ SOFTWARE.
 
 //通信系の処理の管理、OSC情報の送受信を行う
 namespace VMTDriver {
-	const string Version = "VMT_013";
+	const string Version = "VMT_013_Mfa01";
 
 	class OSCReceiver : public osc::OscPacketListener {
 	private:
@@ -42,6 +42,7 @@ namespace VMTDriver {
 		static void OSCReceiver::SendAlive();
 		static void OSCReceiver::SendHaptic(int index, float frequency, float amplitude, float duration);
 		static void OSCReceiver::SendUnavailable(int code, std::string reason);
+		static void OSCReceiver::SendDevicePose(const Eigen::Affine3d& pose, const char* serialNumber);
 	};
 
 	class CommunicationManager {
