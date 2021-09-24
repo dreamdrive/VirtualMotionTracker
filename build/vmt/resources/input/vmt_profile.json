@@ -84,6 +84,8 @@
     },
     "/input/Joystick0" : { 
         "type" : "joystick",
+        "click" : true,
+        "touch" : true,
         "binding_image_point" : [ 0, 0 ],
         "order" : 1
     },

@@ -96,8 +96,14 @@
             },
             {
                "inputs" : {
+                  "click" : {
+                     "output" : "/actions/legacy/in/left_axis0_press"
+                  },
                   "position" : {
                      "output" : "/actions/legacy/in/left_axis0_value"
+                  },
+                  "touch" : {
+                     "output" : "/actions/legacy/in/left_axis0_touch"
                   }
                },
                "mode" : "joystick",
@@ -195,8 +201,14 @@
             },
             {
                "inputs" : {
+                  "click" : {
+                     "output" : "/actions/legacy/in/right_axis0_press"
+                  },
                   "position" : {
                      "output" : "/actions/legacy/in/right_axis0_value"
+                  },
+                  "touch" : {
+                     "output" : "/actions/legacy/in/right_axis0_touch"
                   }
                },
                "mode" : "joystick",
