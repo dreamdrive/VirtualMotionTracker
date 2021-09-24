@@ -429,6 +429,26 @@ namespace VMTDriver {
         }
     }
 
+    //仮想デバイスからOpenVRへデバイスのジョイスティックのTouch状態の更新を通知する
+    void TrackedDeviceServerDriver::UpdateJoystickInputTouch(uint32_t index, bool value, double timeoffset)
+    {
+        if (!m_alreadyRegistered) { return; }
+        if (index == 0)
+        {
+            VRDriverInput()->UpdateBooleanComponent(JoystickComponent[index + 2], value, timeoffset);
+        }
+    }
+
+    //仮想デバイスからOpenVRへデバイスのジョイスティックのClick状態の更新を通知する
+    void TrackedDeviceServerDriver::UpdateJoystickInputClick(uint32_t index, bool value, double timeoffset)
+    {
+        if (!m_alreadyRegistered) { return; }
+        if (index == 0)
+        {
+            VRDriverInput()->UpdateBooleanComponent(JoystickComponent[index + 3], value, timeoffset);
+        }
+    }
+
     //仮想デバイスの状態をリセットする
     void TrackedDeviceServerDriver::Reset()
     {
@@ -604,6 +624,8 @@ namespace VMTDriver {
 
         VRDriverInput()->CreateScalarComponent(m_propertyContainer, "/input/Joystick0/x", &JoystickComponent[0], EVRScalarType::VRScalarType_Absolute, EVRScalarUnits::VRScalarUnits_NormalizedTwoSided);
         VRDriverInput()->CreateScalarComponent(m_propertyContainer, "/input/Joystick0/y", &JoystickComponent[1], EVRScalarType::VRScalarType_Absolute, EVRScalarUnits::VRScalarUnits_NormalizedTwoSided);
+        VRDriverInput()->CreateBooleanComponent(m_propertyContainer, "/input/Joystick0/touch", &JoystickComponent[2]);
+        VRDriverInput()->CreateBooleanComponent(m_propertyContainer, "/input/Joystick0/click", &JoystickComponent[3]);
 
         VRDriverInput()->CreateHapticComponent(m_propertyContainer, "/output/haptic", &HapticComponent);
 

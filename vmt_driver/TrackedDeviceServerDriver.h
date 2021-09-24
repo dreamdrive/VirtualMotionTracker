@@ -62,7 +62,7 @@ namespace VMTDriver {
 
         VRInputComponentHandle_t ButtonComponent[8]{ 0 };
         VRInputComponentHandle_t TriggerComponent[2]{ 0 };
-        VRInputComponentHandle_t JoystickComponent[2]{ 0 };
+        VRInputComponentHandle_t JoystickComponent[4]{ 0 };
         VRInputComponentHandle_t HapticComponent{ 0 };
 
         bool m_poweron = false;
@@ -83,6 +83,8 @@ namespace VMTDriver {
         void UpdateButtonInput(uint32_t index, bool value, double timeoffset);
         void UpdateTriggerInput(uint32_t index, float value, double timeoffset);
         void UpdateJoystickInput(uint32_t index, float x, float y, double timeoffset);
+        void UpdateJoystickInputTouch(uint32_t index, bool value, double timeoffset);
+        void UpdateJoystickInputClick(uint32_t index, bool value, double timeoffset);
         void Reset();
 
         void CalcVelocity(DriverPose_t& pose);

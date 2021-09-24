@@ -214,6 +214,22 @@ namespace VMTDriver {
 					GetServer()->GetDevice(idx).UpdateJoystickInput(ButtonIndex, x, y, timeoffset);
 				}
 			}
+			else if (adr == "/VMT/Input/Joystick/Touch")
+			{
+				args >> idx >> ButtonIndex >> timeoffset >> ButtonValue >> osc::EndMessage;
+				if (GetServer()->IsVMTDeviceIndex(idx))
+				{
+					GetServer()->GetDevice(idx).UpdateJoystickInputTouch(ButtonIndex, ButtonValue != 0, timeoffset);
+				}
+			}
+			else if (adr == "/VMT/Input/Joystick/Click")
+			{
+				args >> idx >> ButtonIndex >> timeoffset >> ButtonValue >> osc::EndMessage;
+				if (GetServer()->IsVMTDeviceIndex(idx))
+				{
+					GetServer()->GetDevice(idx).UpdateJoystickInputClick(ButtonIndex, ButtonValue != 0, timeoffset);
+				}
+			}
 			//すべてのデバイスのリセット
 			else if (adr == "/VMT/Reset")
 			{
