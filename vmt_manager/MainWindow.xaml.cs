@@ -42,7 +42,7 @@ namespace vmt_manager
     /// </summary>
     public partial class MainWindow : Window
     {
-        const string Version = "VMT_013_Mfa01";
+        const string Version = "VMT_013_dt1";
         private DispatcherTimer dispatcherTimer;
         Random rnd;
         string title = "";
@@ -172,6 +172,12 @@ namespace vmt_manager
                     if (args[1] == "uninstall")
                     {
                         UninstallButton(null, null);
+                        Close();
+                        return;
+                    }
+                    if (args[1] == "setroom")
+                    {
+                        SetRoomMatrixButton(null, null);
                         Close();
                         return;
                     }

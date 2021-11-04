@@ -1,4 +1,14 @@
-# VMT - Virtual Motion Tracker の MocapForAll向け改造版
+# VMT - Virtual Motion Tracker の だみとら向け改造版
+
+本家VMTから派生した MocapForAll向け改造版に、だみとらに必要だった機能(1点)を追加したバージョン
+
+##  MocapForAll向け改造版からの変更点
+
+- 起動時の引数の追加
+-- vmt_manager.exe setroom	SetRoomMatrixの実行
+
+
+# VMT - Virtual Motion Tracker の MocapForAll向け改造版とは
 
 VMT - Virtual Motion Tracker を改造し、[デバイスの姿勢を取得するAPIを追加](https://github.com/KenjiAsaba/VirtualMotionTracker/commit/aa35bd98d5f569167222039a61ccab175c4761c3)したバージョンです。  
 負荷分散のためにネットワーク上の別PCで実行しているSteamVRからデバイスの姿勢を取得したいという[MocapForAll](https://github.com/Akiya-Research-Institute/MocapForAll-Wiki/wiki#%E7%9B%AE%E6%AC%A1)での利用を念頭にしたものですが、場合によっては他の用途にも使えるかもしれません。
